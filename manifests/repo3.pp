@@ -85,6 +85,7 @@ define tp::repo3 (
     'Debian': {
       if !defined(Exec['tp_apt_update'])
       and is_string($settings[package_name])
+      or is_array($settings[package_name])
       and $settings[package_name] != ''
       and $settings[package_name] != undef
       and is_string($settings[key]) {
